@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課題❶-4</title>
+</head>
+<body>
+
+    <script>
+
+        let tasklist = ['[内容]机を片付ける、[ジャンル]削除',
+                        '[内容]牛乳を買う、[ジャンル]買い物',
+                        '[内容]散歩する、[ジャンル]運動'];
+        const task1 = '=====================';
+        const task2 = '現在持っているタスク一覧';
+        const task3 = '=====================';
+
+        console.log(task1);
+        console.log(task2);
+        console.log(task3);
+
+        tasklist.forEach((task,idx) => {
+            console.log(idx + ' : ' + task);
+
+        });
+
+        task4 = prompt('タスクを入力してください');
+        task5 = prompt('ジャンルを入力してください');
+
+        console.log(task1);
+        console.log(task2);
+        console.log(task3);
+
+        tasklist.forEach((task,idx) => {
+            console.log(idx + ' : ' + task);
+
+        });
+
+        console.log('3' + ' : ' + '[内容]' + task4 +  '、' + '[ジャンル]' + task5);
+        answer = prompt('「確認,追加,削除,終了」の4つのいずれかを入力してください');
+
+    </script>
+    
+</body>
+</html>
