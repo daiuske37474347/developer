@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課題❶-3</title>
+</head>
+<body>
+    <script>
+
+        const task = ['=====================',
+                     '現在持っているタスク一覧',
+                     '====================='];
+        let tasklist = ['掃除','買い物','散歩'];
+        
+        task.forEach(taskloop => {
+            console.log(taskloop);
+        });
+        tasklist.forEach((taskadd,idx) =>{
+            console.log(idx + ' : ' + taskadd);
+        });
+
+        let answer = prompt('タスクを入力してください');
+        if(answer != null){
+            tasklist.push(answer)
+        }
+        task.forEach(taskloop => {
+            console.log(taskloop);
+        });
+        tasklist.forEach((taskadd,idx) =>{
+            console.log(idx + ' : ' + taskadd);
+        });
+        alert('新しいタスクを追加しました。');
+        selecttask = prompt('「確認,追加,削除,終了」の4つのいずれかを入力してください');
+
+    </script>
+    
+</body>
+</html>
