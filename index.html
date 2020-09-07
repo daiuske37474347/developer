@@ -6,7 +6,43 @@
     <title>課題❶-4</title>
 </head>
 <body>
-    
+
+    <script>
+
+        const tasktitle = [
+            '=====================',
+            '現在持っているタスク一覧',
+            '====================='
+        ];
+                      
+        const tasklist = [
+            '[内容]机を片付ける、[ジャンル]削除',
+            '[内容]牛乳を買う、[ジャンル]買い物',
+            '[内容]散歩する、[ジャンル]運動'
+        ];
+                        
+        tasktitle.forEach(task1 =>{
+            console.log(task1);
+        });
+        tasklist.forEach((task,idx) => {
+            console.log(idx + ' : ' + task);
+        });
+
+        task = prompt('タスクを入力してください');
+        genre = prompt('ジャンルを入力してください');
+
+        tasklist.push('[内容]' + task +  '、' + '[ジャンル]' + genre)
+
+        tasktitle.forEach(task1 =>{
+            console.log(task1);
+        });
+        tasklist.forEach((task,idx) => {
+            console.log(idx + ' : ' + task);
+        });
+        
+        answer = prompt('「確認,追加,削除,終了」の4つのいずれかを入力してください');
+
+    </script>
     
 </body>
 </html>
