@@ -44,8 +44,9 @@
         result.removeChild(result.lastElementChild);
       }
       if (
+        FizzNum != "" && BuzzNum != "" &&
         Number.isInteger(Number(FizzNum)) &&
-        Number.isInteger(Number(BuzzNum))
+        Number.isInteger(Number(BuzzNum)) 
       ) {
         // 数値以外出たときに、キャンセルする、
         const Fizz = FizzNum;
