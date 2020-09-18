@@ -29,14 +29,15 @@
         />
       </h4>
     </div>
-    <input type="button" value="実行" onClick="Clickoperation()" />
+    <input type="button" value="実行" id="operation" />
     <div>
       <span>【出力】</span>
       <div id="result"></div>
     </div>
   </body>
   <script>
-    function Clickoperation() {
+    const operation = document.getElementById("operation");
+    const Clickoperation = () => {
       const FizzNum = document.getElementById("FizzNum").value;
       const BuzzNum = document.getElementById("BuzzNum").value;
       const result = document.getElementById("result");
@@ -44,9 +45,10 @@
         result.removeChild(result.lastElementChild);
       }
       if (
-        FizzNum != "" && BuzzNum != "" &&
+        FizzNum != "" &&
+        BuzzNum != "" &&
         Number.isInteger(Number(FizzNum)) &&
-        Number.isInteger(Number(BuzzNum)) 
+        Number.isInteger(Number(BuzzNum))
       ) {
         // 数値以外出たときに、キャンセルする、
         const Fizz = FizzNum;
@@ -70,6 +72,7 @@
         newDiv.innerHTML = "整数値を入力してください";
         result.appendChild(newDiv);
       }
-    }
+    };
+    operation.addEventListener("click", Clickoperation);
   </script>
 </html>
