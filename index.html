@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>課題2-1</title>
-</head>
-<body>
-
-    
-    
-</body>
+  </head>
+  <body>
+    <h1>FizzBuzz問題</h1>
+    <div>
+      <h4>
+        FizzNum :
+        <input
+          type="text"
+          id="FizzNum"
+          value=""
+          placeholder="整数値を入力してください"
+        />
+      </h4>
+    </div>
+    <div>
+      <h4>
+        BuzzNum :
+        <input
+          type="text"
+          id="BuzzNum"
+          value=""
+          placeholder="整数値を入力してください"
+        />
+      </h4>
+    </div>
+    <input type="button" value="実行" id="operation" />
+    <div>
+      <span>【出力】</span>
+      <div id="result"></div>
+    </div>
+  </body>
+  <script>
+    const operation = document.getElementById("operation");
+    const Clickoperation = () => {
+      const FizzNum = document.getElementById("FizzNum").value;
+      const BuzzNum = document.getElementById("BuzzNum").value;
+      const result = document.getElementById("result");
+      while (result.lastElementChild) {
+        result.removeChild(result.lastElementChild);
+      }
+      if (
+        FizzNum != "" &&
+        BuzzNum != "" &&
+        Number.isInteger(Number(FizzNum)) &&
+        Number.isInteger(Number(BuzzNum))
+      ) {
+        // 数値以外出たときに、キャンセルする、
+        const Fizz = FizzNum;
+        const Buzz = BuzzNum;
+        // 最小公倍数
+        for (let i = 1; i < 100; i++) {
+          const newDiv = document.createElement("div");
+          if (i % Fizz === 0 && i % Buzz === 0) {
+            newDiv.innerHTML = "FizzBuzz " + i;
+            result.appendChild(newDiv);
+          } else if (i % Fizz === 0) {
+            newDiv.innerHTML = "Fizz " + i;
+            result.appendChild(newDiv);
+          } else if (i % Buzz === 0) {
+            newDiv.innerHTML = "Buzz " + i;
+            result.appendChild(newDiv);
+          }
+        }
+      } else {
+        const newDiv = document.createElement("div");
+        newDiv.innerHTML = "整数値を入力してください";
+        result.appendChild(newDiv);
+      }
+    };
+    operation.addEventListener("click", Clickoperation);
+  </script>
 </html>
